@@ -1,0 +1,10 @@
+<nav class="nav nav-pills flex-column flex-nowrap overflow-auto slider__nav">
+    <a (click)="selectCategory()" routerLink="/products" class="nav-link" [class.active]="displayAll">
+        All Categories
+    </a>
+
+    <a *ngFor="let category of categories" routerLink="products/category/{{ category.id }}" (click)="selectCategory(category)" class="nav-link"
+    [class.active]="category == selectedCategory">
+        {{ category.name }}
+    </a>
+</nav>

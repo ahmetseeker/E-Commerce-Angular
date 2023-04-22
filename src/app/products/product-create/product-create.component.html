@@ -1,0 +1,54 @@
+<div class="m-5">
+    <h3>Product Create</h3>
+    <!-- {{ model | json }} -->
+    <form #form="ngForm" (ngSubmit)="saveProduct(form)">
+        <div class="alert alert-danger mb-3" *ngIf="error">
+            {{ error }}
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input required minlength="5" [(ngModel)]="model.name" #name="ngModel" type="text" name="name" id="name" class="form-control">
+            <div class="text-danger mt-1" *ngIf="name.invalid && name.touched">
+                <small>Name must be 5 characters or more</small>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input  required min="0" max="100000" [(ngModel)]="model.price" #price="ngModel" type="number" name="price" id="price" class="form-control">
+            <div class="text-danger mt-1" *ngIf="price.invalid && price.touched">
+                <small>Price must be between 0 and 100000</small>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="oldPrice" class="form-label">OldPrice</label>
+            <input  required min="0" max="100000" [(ngModel)]="model.oldPrice" #oldPrice="ngModel" type="number" name="oldPrice" id="oldPrice" class="form-control">
+            <div class="text-danger mt-1" *ngIf="oldPrice.invalid && oldPrice.touched">
+                <small>Old price must be between 0 and 100000</small>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="imageUrl" class="form-label">ImageUrl</label>
+            <input required [(ngModel)]="model.imageUrl" type="text" name="imageUrl" id="imageUrl" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="productHeader" class="form-label">Product Header</label>
+            <textarea required [(ngModel)]="model.productHeader" type="text" name="productHeader" id="productHeader"     class="form-control"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <ckeditor required [(ngModel)]="model.description" name="description" id="description"></ckeditor>
+        </div>
+        <div class="mb-3">
+            <label for="isActive" class="form-check-label me-1">isActive</label>
+            <input required [(ngModel)]="model.isActive" type="checkbox" name="isActive" id="isActive" class="form-check-input">
+        </div>
+        <div class="mb-3">
+            <label for="categoryId" class="form-label">Category</label>
+            <select required [(ngModel)]="model.categoryId" name="categoryId" id="categoryId" class="form-select">
+                <option value="0">Category</option>
+                <option *ngFor="let category of categories" value="{{ category.id }}">{{ category.name }}</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-warning" [disabled]="form.invalid">Save Product</button>
+    </form>
+</div>

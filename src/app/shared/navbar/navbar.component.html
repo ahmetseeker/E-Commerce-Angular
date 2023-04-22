@@ -1,0 +1,61 @@
+<header>
+    <section class="top-bar">
+        <div class="container">
+            <div class="row gy-3 align-items-center">
+                <div class="col-lg-2 col-4">
+                    <a routerLink="/" class="navbar-brand bg-main-color text-white p-3 rounded">E-Commerce</a>
+                </div>
+                <div class="col-lg-5 col-8 order-lg-last">
+                    <div class="text-end">
+                        <a routerLink="/auth" class="btn btn-light me-1">
+                            <i class="fa fa-user"></i> <span class="ms-1 d-none d-sm-inline-block">Account</span>
+                        </a>
+                        <a *ngIf="isAuthenticated" href="" class="btn btn-light me-1">
+                            <i class="fa fa-heart"></i> <span class="ms-1 d-none d-sm-inline-block">List</span>
+                        </a>
+                        <a routerLink="/products/cart" *ngIf="isAuthenticated" class="btn btn-light me-1">
+                            <i class="fa fa-shopping-cart"></i> <span class="ms-1 d-none d-sm-inline-block">Cart</span>
+                        </a>
+                        <a routerLink="/auth" *ngIf="isAuthenticated" (click)="logout()" class="btn btn-light me-1">
+                            <i class="fa fa-sign-out"></i> <span class="ms-1 d-none d-sm-inline-block">Logout</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Keyword">
+                            <button class="btn btn-primary bg-main-color text-white">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-main-color">
+        <div class="container">
+            <div class="navbar-brand">Shop App</div>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/products">Products</a>
+                    </li>
+                    <li *ngIf="isAdmin" class="nav-item">
+                        <a class="nav-link" routerLink="/products/create">Create Product</a>
+                    </li>
+                    <li *ngIf="isAdmin" class="nav-item">
+                        <a class="nav-link" routerLink="/categories/create">Create Category</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,10 @@
+<div class="m-5">
+    <h3>Category Create</h3>
+    <form>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input #name type="text" name="name" id="name" class="form-control">
+        </div>
+        <button type="button" class="btn btn-warning" (click)="saveCategory(name)">Save Category</button>
+    </form>
+</div>

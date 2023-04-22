@@ -1,0 +1,190 @@
+$bg-main: #6610f2;
+
+.top-bar {
+    padding: 1rem 0;
+}
+
+.bg-main-color {
+    background-color: #6610f2;
+}
+
+.btn-primary:hover {
+    opacity: .8;
+    background-color: $bg-main;
+}
+
+.btn-light {
+    background-color: #fff;
+    border-color: #dee2d6;
+    color: #212529;
+
+    i {
+        color: #9da1a7;
+    }
+
+    &:hover {
+        border-color: #c1c9d0;
+        color: $bg-main;
+
+        i {
+            color: $bg-main;
+        }
+    } 
+}
+
+.slider {
+    &__nav {
+        max-height: 250px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .slider {
+        &__nav {
+            max-height: 300px;
+        }
+    }
+}
+
+@media (min-width: 1400px) {
+    .slider {
+        &__nav {
+            max-height: 350px;
+        }
+    }
+}
+
+// cards
+
+.card {
+    .img-wrap {
+        height: 240px;
+        display: block;
+        padding: 1rem;
+        text-align: center;
+        position: relative;
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        img {
+            width: auto;
+            height: 100%;
+            max-width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .title {
+        display: block;
+        text-decoration: none;
+        color: #51585e;
+    }
+
+    .info-wrap {
+        padding: 1rem 1.2rem;
+
+        .btn-icon {
+            width: 2.5rem;
+            padding-left: 0;
+            padding-right: 0;
+
+            }
+        }
+     }
+
+
+// Product Details 
+
+.breadcrumb {
+    a {
+        color: #fff;
+        opacity: .75;
+    }
+
+    .breadcrumb-item {
+        color: #fff;
+        max-width: 100px;
+    }
+}
+
+// Gallery
+
+.gallery-wrap {
+    .img-big-wrap {
+        display: block;
+        width: 100%;
+        height: 400px;
+        margin-bottom: 1rem;
+        text-align: center;
+        background-color: #fff;
+
+        a {
+            display: block;
+            height: 100%;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    .thumbs-wrap {
+        text-align: center;
+
+        a {
+            width: 60px;
+            height: 60px;
+            border: 1px solid #dde2e6;
+            border-radius: .4rem;
+            margin: 3px;
+            display: inline-block;
+            overflow: hidden;
+
+        }
+        
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            cursor: zoom-in;
+        }
+    }
+}
+
+.checked {
+    color: orange;
+}
+
+.slider {
+    .nav-link.active {
+        background-color: #6610f2;
+    }
+}
+
+.alert {
+    margin-bottom: 15rem;
+    margin-top: 1rem;
+}
+
+.form-control.ng-touched.ng-invalid {
+    border-left: 5px solid #a94442;
+}
+
+.form-control.ng-dirty.ng-valid {
+    border-left: 5px solid #41A948;
+}
+
+.spinner-border {
+    // position: relative;
+    // top: 50%;
+    // left: 50%;
+    display: block;
+    margin: 2rem auto;
+    
+}

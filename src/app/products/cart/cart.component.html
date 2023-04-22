@@ -1,0 +1,88 @@
+<div *ngIf="!loading">
+    <div *ngIf="products.length > 0; else noProducts">
+        <ng-template [ngTemplateOutlet]="productList2"></ng-template>
+    </div>
+</div>
+    
+<ng-template #productList2>
+    <div class="container my-5">
+        <div class="row">
+            <div *ngFor="let product of products">
+                <div *ngIf="product.isActive" class="  d-flex justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="card shadow product-card my-3">
+                                <div class="row g-0">
+                                    <div class="col-xl-3 col-md-4">
+                                        <a href="#" class="img-wrap">
+                                            <img src="../../assets/img/{{ product.imageUrl}}" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="col-xl-9 col-md-8 border-start">
+                                        <div class="card-body">
+                                            <a href="#" class="btn btn-outline-primary btn-icon float-end">
+                                                <i class="fa fa-heart"></i>
+                                            </a>
+                                            <a href="#" class="title h6 mb-3">
+                                                {{ product.productHeader}}
+                                            </a>
+            
+                                            <div class="mb-2">
+                                                <div class="mb-2 rating">
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="text-warning ms-1">5.0</span>
+                                                </div>
+                                                <span class="text-muted me-1">In Stock</span>
+                                                <span class="text-success">Free Shipping</span>
+                                            </div>
+            
+                                            <div class="price-wrap mb-4">
+                                                <strong class="price me-1">{{ product.price }}</strong>
+                                                <del class="price-old">{{ product.oldPrice }}</del>
+                                            </div>
+            
+                                            <div class="d-grid gap-2 d-md-block">
+                                                <a class="btn btn-primary me-1" (click)="deleteItem(product)">
+                                                    <i class="fa-solid fa-trash"></i> Delete From Cart
+                                                </a>
+                                                <button class="btn btn-outline-primary">
+                                                    <i class="fa fa-heart me-1"></i> Add To Favorites
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <nav class="mt-4">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a href="" class="page-link">Previous</a>
+                        </li>
+                        <li class="page-item"><a href="" class="page-link">1</a></li>
+                        <li class="page-item"><a href="" class="page-link">2</a></li>
+                        <li class="page-item"><a href="" class="page-link">3</a></li>
+                        <li class="page-item">
+                            <a href="" class="page-link">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+</ng-template>
+
+<ng-template #noProducts>
+    <div class="alert alert-warning">
+        No Products
+    </div>
+</ng-template>
+
+<div *ngIf="loading" class="spinner-border text-danger" role="status">
+    <span class="visually-hidden"></span>
+</div>

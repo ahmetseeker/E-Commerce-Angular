@@ -1,0 +1,93 @@
+<div *ngIf="!loading">
+    <section class="py-4">
+        <div class="container">
+            <div class="row" *ngIf="product else noProduct">
+                <aside class="col-lg-5">
+                    <div class="gallery-wrap">
+                        <div class="img-big-wrap img-thumbnail">
+                            <a href="../../assets/img/{{product.imageUrl}}" data-type="image" data-fs-lightbox="mygallery">
+                                <img src="../../assets/img/{{product.imageUrl}}" alt="">
+                            </a>
+                        </div>
+                        <div class="thumbs-wrap">
+                            <a href="../../assets/img/2-big.jpeg" data-type="image" data-fslightbox="mygallery">
+                                <img src="../../assets/img/2.jpeg" alt="">
+                            </a>
+                            <a href="../../assets/img/3-big.jpeg" data-type="image" data-fslightbox="mygallery">
+                                <img src="../../assets/img/3.jpeg" alt="">
+                            </a>
+                            <a href="../../assets/img/4-big.jpeg" data-type="image" data-fslightbox="mygallery">
+                                <img src="../../assets/img/4.jpeg" alt="">
+                            </a>
+                            <a href="../../assets/img/5-big.jpeg" data-type="image" data-fslightbox="mygallery">
+                                <img src="../../assets/img/5.jpeg" alt="">
+                            </a>
+                            <a href="../../assets/img/6-big.jpeg" data-type="image" data-fslightbox="mygallery">
+                                <img src="../../assets/img/6.jpeg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+                <div class="col-lg-7">
+                    <article>
+                        <h4 class="title text-dark">
+                            {{ product.productHeader }}
+                        </h4>
+                        <div class="rating-wrap">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <p class="text-success">In Stock</p>
+                        <div class="mb-3">
+                            <del class="old-price me-1">{{ product.oldPrice }}$</del>
+                            <b class="price h5">{{ product.price }}$</b>
+                        </div>
+                        <div class="product-desc">
+                            <p [innerHTML]="product.description">
+                                <!-- {{ product.description }} -->
+                            </p>
+                        </div>
+                        <dl class="row border-bottom">
+                            <dt class="col-3">Color:</dt>
+                            <dd class="col-9">Silver</dd>
+                            <dt class="col-3">Screen Size:</dt>
+                            <dd class="col-9">1.69</dd>
+                            <dt class="col-3">Display Type:</dt>
+                            <dd class="col-9">LCD</dd>
+                        </dl>
+                        <div class="row mb-4">
+                            <div class="col-md-4 col-6 mb-2">
+                                <label class="form-label">Size</label>
+                                <select class="form-select">
+                                    <option value="">41 mm</option>
+                                    <option value="">45 mm</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <a routerLink="/products/cart" (click)="addToCart(product)" class="btn btn-warning me-1">
+                                <i class="fa fa-shopping-basket me-1"></i> Add To Cart
+                            </a>
+                            <a class="btn btn-light">
+                                <i class="fa fa-heart me-1"></i> Add To List
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<ng-template #noProduct>
+    <div class="alert alert-warning">
+        No Product
+    </div>
+</ng-template>
+
+<div *ngIf="loading" class="spinner-border text-danger" role="status">
+    <span class="visually-hidden"></span>
+</div>
