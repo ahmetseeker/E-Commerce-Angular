@@ -25,3 +25,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Project Details
+
+It's a e-commerce project that you can login and register. After logging in if you have valid token, you don't have to login again for an hour. There are create product and create category functions for admins. And these are protected by admin guard. There are also product details, logout, add to cart and delete from the cart functions. Also there is lazy loading in the project.
