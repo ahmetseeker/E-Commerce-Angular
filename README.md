@@ -28,4 +28,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Project Details
 
-It's a e-commerce project that you can login and register. After logging in if you have valid token, you don't have to login again for an hour. There are create product and create category functions for admins. And these are protected by admin guard. There are also product details, logout, add to cart and delete from the cart functions. Also there is lazy loading in the project.
+It's a e-commerce project that you can login and register. After logging in if you have valid token, you don't have to login again for an hour. There are create product and create category functions for admins. And these are protected by admin guard. There are also product details, logout, add to cart and delete from the cart functions. I used firebase for database and publish. Also there is lazy loading in the project. 
+
+https://e-commerce-2fc19.web.app
